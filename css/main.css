@@ -1,0 +1,25 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background-color: #ffffff;
+}
+
+#screen
+{
+    border: 3px solid #ee6f07;
+    background-color: #27a71b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    width: 1000px;
+    max-width: 100%;
+    max-height: 100%;
+}
