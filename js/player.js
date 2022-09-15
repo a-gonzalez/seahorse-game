@@ -59,7 +59,11 @@ export default class Player
             {
                 this.power_up_timer += delta_time;
                 this.frame_y = 1;
-                this.game.ammo += 0.1;
+
+                if (this.game.ammo < 100)
+                {
+                    this.game.ammo += 0.1;
+                }
             }
         }
 

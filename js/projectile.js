@@ -15,7 +15,7 @@ export default class Projectile
         this.height = 5;
         this.speed = 3;
         this.angle = 0;
-        this.alignment = Math.random() * 0.2 - 0.1;
+        //this.alignment = Math.random() * 0.2 - 0.1;
         this.remove = false;
 
         //this.primary_sound.play();
@@ -30,18 +30,10 @@ export default class Projectile
             this.remove = true;
         }
         //this.angle += this.alignment;
-        //this.x += Math.sin(this.angle * 5);
     }
 
     draw(context)
-    {
-        //context.save();
-        //context.strokeStyle = "#36d460"; //"#ff0000";
-        //context.lineWidth = 0.5;
-        //context.strokeRect(this.x, this.y, this.width, this.height);
-        //context.translate(this.x, this.y);
-        //context.rotate(this.angle);
+    { 
         context.drawImage(this.image, this.x, this.y, this.width, this.height);
-        //context.restore();
     }
 }

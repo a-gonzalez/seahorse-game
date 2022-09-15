@@ -15,8 +15,8 @@ export default class Game
         this.color = "#70b596"; //"#ee6f07"; //"#dadd08";
         this.speed = 1;
         this.speed_max = 3;
-        this.ammo = 25;
         this.ammo_max = 30;
+        this.ammo = this.ammo_max;
         this.ammo_interval = 500;
         this.ammo_timer = 0;
         this.hostis_timer = 0;
@@ -58,7 +58,7 @@ export default class Game
 
         if (this.ammo_timer > this.ammo_interval)
         {
-            if (this.ammo < this.ammo_max)
+            if (this.ammo < this.ammo_max && this.ammo <= 100)
             {
                 ++this.ammo;
             }
@@ -68,8 +68,6 @@ export default class Game
         {
             this.ammo_timer += delta_time;
         }
-
-        //console.log(this.hostis_timer > this.hostis_interval);
 
         if (this.hostis_timer > this.hostis_interval && !this.game_over)
         {
@@ -123,7 +121,10 @@ export default class Game
                 }
                 else if (!this.game_over)
                 {
-                    --this.score;
+                    if (this.score > 0)
+                    {
+                        --this.score;
+                    }
                 }
             }
 
@@ -170,7 +171,7 @@ export default class Game
         {
             return !hostis.remove;
         });
-        //console.log(this.inimicus);
+
         this.background.prop.update(delta_time);
     }
 
